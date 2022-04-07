@@ -1,29 +1,29 @@
 # IMPORTS
 
 from ursina import *
-from ursina.shaders import lit_with_shadows_shader
+#from ursina.shaders import lit_with_shadows_shader
 import random
 
 
-app = Ursina()
+#app = Ursina()
 
 #WINDOW
 
-window.title = 'Random Character Generator'
-window.borderless = True
-window.fullscreen = False
-window.exit_button.visible = True
-window.fps_counter.enabled = False
-window.size = (630, 710)
-window.position = Vec2(725, 50)
+#window.title = 'Random Character Generator'
+#indow.borderless = True
+#window.fullscreen = False
+#window.exit_button.visible = True
+#window.fps_counter.enabled = False
+#window.size = (630, 710)
+#window.position = Vec2(725, 50)
 
 #ENVIROMENT
 
-Sky()
-Entity.default_shader = lit_with_shadows_shader
-sun = DirectionalLight(shadows=True)
-sun.look_at(Vec3(1,-1,-1))
-EditorCamera()
+#Sky()
+#Entity.default_shader = lit_with_shadows_shader
+#sun = DirectionalLight(shadows=True)
+#sun.look_at(Vec3(1,-1,-1))
+#EditorCamera()
 
 # VARIABLES
 
@@ -147,4 +147,4 @@ def func():
 
 func()
 
-app.run()
+#app.run()
