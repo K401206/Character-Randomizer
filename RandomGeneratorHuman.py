@@ -1,42 +1,11 @@
-# IMPORTS
-
 from ursina import *
-#from ursina.shaders import lit_with_shadows_shader
 import random
-
-
-#app = Ursina()
-
-#WINDOW
-
-#window.title = 'Random Character Generator'
-#indow.borderless = True
-#window.fullscreen = False
-#window.exit_button.visible = True
-#window.fps_counter.enabled = False
-#window.size = (630, 710)
-#window.position = Vec2(725, 50)
-
-#ENVIROMENT
-
-#Sky()
-#Entity.default_shader = lit_with_shadows_shader
-#sun = DirectionalLight(shadows=True)
-#sun.look_at(Vec3(1,-1,-1))
-#EditorCamera()
-
-# VARIABLES
-
-Cabello = True
-Heterocromia = False
-ColorEyes = color.random_color()
-Caucasico = True
-ColorLegs = color.random_color()
-ColorCloth = color.random_color()
 
 random_generator = random.Random()
 
-# ENTITYS
+ColorEyes = color.random_color()
+ColorLegs = color.random_color()
+ColorCloth = color.random_color()
 
 class Humano(Entity):
     cabeza = Entity(
@@ -56,13 +25,13 @@ class Humano(Entity):
         model = "cube",
         color = ColorEyes,
         position = (0.3, 1.6, -0.5),
-        scale = 0.2
+        scale = random_generator.random()
     )
     ojo2 = Entity(
         model = "cube",
         color = ColorEyes,
         position = (-0.3, 1.6, -0.5),
-        scale = 0.2
+        scale = random_generator.random()
     )
     nariz = Entity(
         model = "cube",
@@ -120,18 +89,35 @@ class Humano(Entity):
 
 def func():
 
-    for i in range(1):
-        if Heterocromia:
-            Humano.ojo1.color = color.random_color()
-        else:
-            Humano.ojo1.color = ColorEyes
+    if Humano.cabello.scale_y <= .5:
+        Humano.cabello.scale_y = .5
+    
+    if Humano.ojo1.scale <= .5:
+        Humano.ojo1.scale = .2
+    else:
+        Humano.ojo1.scale = .25
 
-    if Cabello:
+    if Humano.ojo2.scale <= .5:
+        Humano.ojo2.scale = .2
+    else:
+        Humano.ojo2.scale = .25
+    
+    Cabello = random_generator.random()
+    Heterocromia = random_generator.random()
+    Caucasico = random_generator.random()
+
+    if Cabello <= 0.5:
         Humano.cabello.visible = True
     else:
         Humano.cabello.visible = False
-    
-    if Caucasico:
+   
+    if Heterocromia <= .1:
+        for i in range(1):
+           Humano.ojo1.color = color.random_color()
+    else:
+        Humano.ojo1.color = ColorEyes
+   
+    if Caucasico <= 0.5:
         Humano.cabeza.color = color.peach
         Humano.nariz.color = color.peach
         Humano.brazo1.color = color.peach
@@ -141,10 +127,6 @@ def func():
         Humano.nariz.color = color.brown
         Humano.brazo1.color = color.brown
         Humano.brazo2.color = color.brown
-
-    if Humano.cabello.scale_y <= .5:
-        Humano.cabello.scale_y = .5
+        
 
 func()
-
-#app.run()
