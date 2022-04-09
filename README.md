@@ -5,7 +5,7 @@ Was made in ursina engine using python 3
 
 CURRENT FEATURES
 
-° Random nose and hair size
+° Random nose and hair size<br>
 ° Random color of cloth, hair and eyes
 
 ursina website: ursinaengine.org
