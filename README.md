@@ -10,4 +10,4 @@ CURRENT FEATURES
 
 ursina website: ursinaengine.org
 
-Character Randomizer Version: 1.2
+Character Randomizer Version: 1.0.1
