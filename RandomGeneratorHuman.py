@@ -8,7 +8,7 @@ ColorEyes = color.random_color()
 ColorLegs = color.random_color()
 ColorCloth = color.random_color()
 
-class Humano(Entity
+class Humano(Entity):
     cabello = Entity(model = "cube", coillider = "mesh", color = color.random_color(), position = (0, 2, -0.1), scale = (1.1, random_generator.random(), 1.1))
     cabeza = Entity(model = "cube", collider = "mesh", position = (0, 1.6, -0.1), scale = (1, 1.2, 0.9))
     ojo1 = Entity(model = "cube", color = ColorEyes, position = (0.3, 1.6, -0.5), scale = random_generator.random())
@@ -17,8 +17,10 @@ class Humano(Entity
     cuerpo = Entity(model = "cube", collider = "mesh", color = ColorCloth, scale = (1.3, 2, 0.5))
     hombro1 = Entity(model = "cube", collider = "mesh", color = ColorCloth, position = (0.9, 0.75, 0), scale = 0.5)
     hombro2 = Entity(model = "cube", collider = "mesh", color = ColorCloth, position = (-0.9, 0.75, 0), scale = 0.5)
-    brazo1 = Entity(model = "cube", collider = "mesh", position = (0.9, -0.25 , 0), scale = (0.5, 1.5, 0.5))
-    brazo2 = Entity(model = "cube", collider = "mesh", position = (-0.9, -0.25, 0), scale = (0.5, 1.5, 0.5))
+    brazo1 = Entity(model = "cube", collider = "mesh", position = (0.9, -0.125, 0), scale = (0.5, 1.25, 0.5))
+    brazo2 = Entity(model = "cube", collider = "mesh", position = (-0.9, -0.125, 0), scale = (0.5, 1.25, 0.5))
+    mano1 = Entity(model = "cube", collider = "mesh", position = (0.9, -0.875, 0), scale = (0.5, 0.25, 0.5))
+    mano2 = Entity(model = "cube", collider = "mesh", position = (-0.9, -0.875, 0), scale = (0.5, 0.25, 0.5))
     pierna1 = Entity(model = "cube", collider = "mesh", color = ColorLegs, position = (0.4, -2, 0), scale = (0.5, 2, 0.5))
     pierna2 = Entity(model = "cube", collider = "mesh", color = ColorLegs, position = (-0.4, -2, 0), scale = (0.5, 2, 0.5))
 
@@ -46,26 +48,30 @@ def func():
     Heterocromia = random_generator.random()
     Caucasico = random_generator.random()
 
-    if Cabello <= 0.5:
+    if Cabello <= 0.9:
         Humano.cabello.visible = True
     else:
         Humano.cabello.visible = False
 
-    if Heterocromia < 0.1:
+    if Heterocromia <= 0.1:
         for i in range(1):
             Humano.ojo1.color = color.random_color()
     else:
         Humano.ojo1.color = ColorEyes
 
-    if Caucasico <= 0.5:
+    if Caucasico <= 0.7:
         Humano.cabeza.color = color.peach
         Humano.nariz.color = color.peach
         Humano.brazo1.color = color.peach
         Humano.brazo2.color = color.peach
+        Humano.mano1.color = color.peach
+        Humano.mano2.color = color.peach
     else:
         Humano.cabeza.color = color.brown
         Humano.nariz.color = color.brown
         Humano.brazo1.color = color.brown
         Humano.brazo2.color = color.brown
+        Humano.mano1.color = color.brown
+        Humano.mano2.color = color.brown
         
 func()
