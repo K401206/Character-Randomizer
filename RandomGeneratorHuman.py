@@ -1,4 +1,4 @@
-#IMPORTS
+# IMPORTS
 from ursina import *
 import random
 
@@ -30,8 +30,7 @@ class Humano(Entity):
     pie1 = Entity(model = "cube", collider = "mesh", position =(0.4, -2.875, -0.125), scale = (0.5, 0.25, 0.75))
     pie2 = Entity(model = "cube", collider = "mesh", position = (-0.4, -2.875, -0.125), scale = (0.5, 0.25, 0.75))
 
-def func():
-    #Genes
+def genes():
     Cabello = random_generator.random()
     Heterocromia = random_generator.random()
     Caucasico = random_generator.random()
@@ -62,26 +61,7 @@ def func():
         Humano.mano1.color = color.brown
         Humano.mano2.color = color.brown
 
-    #Settings
-    if Humano.cabello.scale_y <= 0.5:
-        Humano.cabello.scale_y = 0.5
-
-    if Humano.ojo1.scale <= 0.5:
-        Humano.ojo1.scale = 0.2
-    else:
-        Humano.ojo1.scale = 0.225
-
-    if Humano.ojo2.scale <= 0.5:
-        Humano.ojo2.scale = 0.2
-    else:
-        Humano.ojo2.scale = 0.225
-    
-    if Humano.nariz.scale.z >= 0.5:
-        Humano.nariz.scale.z = 0.35
-    elif Humano.nariz.scale.z <= 0.2:
-        Humano.nariz.scale.z = 0.2
-    
-    #Clothes
+def ropa():
     sueter = random_generator.random()
     pantalon = random_generator.random()
     tenis = random_generator.random()
@@ -106,5 +86,26 @@ def func():
     else:
         Humano.pie1.color = Humano.cabeza.color
         Humano.pie2.color = Humano.cabeza.color
+
+def func():
+    if Humano.cabello.scale_y <= 0.5:
+        Humano.cabello.scale_y = 0.5
+
+    if Humano.ojo1.scale <= 0.5:
+        Humano.ojo1.scale = 0.2
+    else:
+        Humano.ojo1.scale = 0.225
+
+    if Humano.ojo2.scale <= 0.5:
+        Humano.ojo2.scale = 0.2
+    else:
+        Humano.ojo2.scale = 0.225
+    
+    if Humano.nariz.scale.z >= 0.5:
+        Humano.nariz.scale.z = 0.35
+    elif Humano.nariz.scale.z <= 0.2:
+        Humano.nariz.scale.z = 0.2
         
+genes()
+ropa()
 func()
