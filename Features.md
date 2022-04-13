@@ -1,8 +1,8 @@
 # Character-Randomizer
 
-This code create random 3D cube-characters
-Was made in ursina engine using python3
-ursina website: ursinaengine.org
+This code create random 3D cube-characters <br>
+Was made in ursina engine using python3 <br>
+<p>ursina website: ursinaengine.org</p>
 
 2.0.0 FEATURES
 ° Long sleeve, t-shirt, shorts, pants, shoes and feets added
