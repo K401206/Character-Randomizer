@@ -15,18 +15,18 @@ class Humano(Entity):
     ojo1 = Entity(model = "cube", color = ColorEyes, position = (0.3, 1.6, -0.5), scale = random_generator.random())
     ojo2 = Entity(model = "cube", color = ColorEyes, position = (-0.3, 1.6, -0.5), scale = random_generator.random())
     nariz = Entity(model = "cube", position = (0, 1.4, -0.6), scale = (0.2, 0.3, random_generator.random()))
-    cuerpo = Entity(model = "cube", collider = "mesh", color = ColorShirt, scale = (1.3, 2, 0.5))
-    hombro1 = Entity(model = "cube", collider = "mesh", color = ColorShirt, position = (0.9, 0.75, 0), scale = 0.5)
-    hombro2 = Entity(model = "cube", collider = "mesh", color = ColorShirt, position = (-0.9, 0.75, 0), scale = 0.5)
-    brazo1 = Entity(model = "cube", collider = "mesh", position = (0.9, -0.125, 0), scale = (0.5, 1.25, 0.5))
-    brazo2 = Entity(model = "cube", collider = "mesh", position = (-0.9, -0.125, 0), scale = (0.5, 1.25, 0.5))
+    cuerpo = Entity(model = "cube", collider = "mesh", color = ColorShirt)
+    hombro1 = Entity(model = "cube", collider = "mesh", color = ColorShirt, position = (0.9, 0.75, 0))
+    hombro2 = Entity(model = "cube", collider = "mesh", color = ColorShirt, position = (-0.9, 0.75, 0))
+    brazo1 = Entity(model = "cube", collider = "mesh", position = (0.9, -0.125, 0))
+    brazo2 = Entity(model = "cube", collider = "mesh", position = (-0.9, -0.125, 0))
     mano1 = Entity(model = "cube", collider = "mesh", position = (0.9, -0.875, 0), scale = (0.5, 0.25, 0.5))
     mano2 = Entity(model = "cube", collider = "mesh", position = (-0.9, -0.875, 0), scale = (0.5, 0.25, 0.5))
-    cadera = Entity(model = "cube", color = ColorJeans, position = (0, -1.125, 0), scale = (1.3, 0.25, 0.5))
-    shortleg1 = Entity(model = "cube", color = ColorJeans, position = (0.4, -1.5, 0), scale = 0.5)
-    shortleg2 = Entity(model = "cube", color = ColorJeans, position = (-0.4, -1.5, 0), scale = 0.5)
-    pierna1 = Entity(model = "cube", collider = "mesh", position = (0.4, -2.25, 0), scale = (0.5, 1, 0.5))
-    pierna2 = Entity(model = "cube", collider = "mesh", position = (-0.4, -2.25, 0), scale = (0.5, 1, 0.5))
+    cadera = Entity(model = "cube", color = ColorJeans, position = (0, -1.125, 0), scale = (1.4, 0.25, 0.6))
+    shortleg1 = Entity(model = "cube", color = ColorJeans, position = (0.4, -1.5, 0), scale = 0.6)
+    shortleg2 = Entity(model = "cube", color = ColorJeans, position = (-0.4, -1.5, 0), scale = 0.6)
+    pierna1 = Entity(model = "cube", collider = "mesh", position = (0.4, -2.25, 0))
+    pierna2 = Entity(model = "cube", collider = "mesh", position = (-0.4, -2.25, 0))
     pie1 = Entity(model = "cube", collider = "mesh", position =(0.4, -2.875, -0.125), scale = (0.5, 0.25, 0.75))
     pie2 = Entity(model = "cube", collider = "mesh", position = (-0.4, -2.875, -0.125), scale = (0.5, 0.25, 0.75))
 
@@ -61,32 +61,6 @@ def genes():
         Humano.mano1.color = color.brown
         Humano.mano2.color = color.brown
 
-def ropa():
-    sueter = random_generator.random()
-    pantalon = random_generator.random()
-    tenis = random_generator.random()
-    
-    if sueter <= 0.5:
-        Humano.brazo1.color = ColorShirt
-        Humano.brazo2.color = ColorShirt
-    else:
-        Humano.brazo1.color = Humano.cabeza.color
-        Humano.brazo2.color = Humano.cabeza.color
-    
-    if pantalon <= 0.5:
-        Humano.pierna1.color = ColorJeans
-        Humano.pierna2.color = ColorJeans
-    else:
-        Humano.pierna1.color = Humano.cabeza.color
-        Humano.pierna2.color = Humano.cabeza.color
-    
-    if tenis <= 0.5:
-        Humano.pie1.color = ColorShoes
-        Humano.pie2.color = ColorShoes
-    else:
-        Humano.pie1.color = Humano.cabeza.color
-        Humano.pie2.color = Humano.cabeza.color
-
 def func():
     if Humano.cabello.scale_y <= 0.5:
         Humano.cabello.scale_y = 0.5
@@ -105,6 +79,46 @@ def func():
         Humano.nariz.scale.z = 0.35
     elif Humano.nariz.scale.z <= 0.2:
         Humano.nariz.scale.z = 0.2
+    
+def ropa():
+    sueter = random_generator.random()
+    pantalon = random_generator.random()
+    tenis = random_generator.random()
+
+    if sueter <= 0.5:
+        Humano.brazo1.color = ColorShirt
+        Humano.brazo1.scale = (0.5, 1.25, 0.5)
+        Humano.brazo2.color = ColorShirt
+        Humano.brazo2.scale = (0.5, 1.25, 0.5)
+        Humano.cuerpo.scale = (1.3, 2, 0.5)
+        Humano.hombro1.scale = 0.5
+        Humano.hombro2.scale = 0.5
+    else:
+        Humano.brazo1.color = Humano.cabeza.color
+        Humano.brazo1.scale = (0.5, 1.25, 0.5)
+        Humano.brazo2.color = Humano.cabeza.color
+        Humano.brazo2.scale = (0.5, 1.25, 0.5)
+        Humano.cuerpo.scale = (1.3, 2, 0.5)
+        Humano.hombro1.scale = 0.5
+        Humano.hombro2.scale = 0.5
+    
+    if pantalon <= 0.5:
+        Humano.pierna1.color = ColorJeans
+        Humano.pierna1.scale = (0.6, 1.1, 0.6)
+        Humano.pierna2.color = ColorJeans
+        Humano.pierna2.scale = (0.6, 1.1, 0.6)
+    else:
+        Humano.pierna1.color = Humano.cabeza.color
+        Humano.pierna1.scale = (0.5, 1, 0.5)
+        Humano.pierna2.color = Humano.cabeza.color
+        Humano.pierna2.scale = (0.5, 1, 0.5)
+    
+    if tenis <= 0.5:
+        Humano.pie1.color = ColorShoes
+        Humano.pie2.color = ColorShoes
+    else:
+        Humano.pie1.color = Humano.cabeza.color
+        Humano.pie2.color = Humano.cabeza.color
         
 genes()
 ropa()
