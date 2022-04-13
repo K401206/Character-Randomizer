@@ -5,7 +5,7 @@ This code create random 3D cube-characters
 Was made in ursina engine using python3
 <br>
 
-<p><a href="ursinaengine.org" target="_blank"> ursinaengine.org</a></p>
+<p>Ursina Website:<a href="ursinaengine.org" target="_blank"> ursinaengine.org</a></p>
 
 <p><b>2.0.0 FEATURES</b>
 <br>
