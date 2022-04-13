@@ -9,7 +9,7 @@ Was made in ursina engine using python3
 
 <p><b>2.0.0 FEATURES</b>
 <br>
-° Long sleeve, t-shirt, shorts, pants, shoes and feets added <br>
+° Long sleeve shirt, t-shirt, shorts, pants, shoes and feets added <br>
 ° Random skin color (Caucasian or brunette) <br>
 ° Heterochromia <br>
 ° Alopecia
