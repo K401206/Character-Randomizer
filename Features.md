@@ -11,10 +11,10 @@ Was made in ursina engine using python3 <br>
 ° Alopeia
 
 
-1.1.1 FEATURES
+<p><b>1.1.1 FEATURES</p></b>
 ° Bug "Nose Separate" fixed
 
 
-1.0.0 FEATURES
+<p><b>1.0.0 FEATURES</p></b>
 ° Random nose and hair sice
 ° Random hair, eyes and clothes color
