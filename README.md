@@ -19,11 +19,11 @@ Was made in ursina engine using python3
 <br>
 ° Bug "Nose Separate" fixed
 <br>
-° Random eye sice
+° Random eye size
 </p>
 
 <p><b>1.0.0 FEATURES</b>
 <br>
-° Random nose and hair sice <br>
+° Random nose and hair size <br>
 ° Random hair, eyes and clothes color
 </p>
