@@ -18,6 +18,8 @@ Was made in ursina engine using python3
 <p><b>1.1.1 FEATURES</b>
 <br>
 ° Bug "Nose Separate" fixed
+<br>
+° Random eye sice
 </p>
 
 <p><b>1.0.0 FEATURES</b>
