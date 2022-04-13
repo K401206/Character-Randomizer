@@ -8,13 +8,13 @@ Was made in ursina engine using python3 <br>
 ° Long sleeve, t-shirt, shorts, pants, shoes and feets added <br>
 ° Random skin color (Caucasian or brunette) <br>
 ° Heterochromia <br>
-° Alopeia
+° Alopecia
 
 
-<p><b>1.1.1 FEATURES</p></b>
+<p><b>1.1.1 FEATURES</b></p>
 ° Bug "Nose Separate" fixed <br>
 
 
-<p><b>1.0.0 FEATURES</p></b>
+<p><b>1.0.0 FEATURES</b></p>
 ° Random nose and hair sice <br>
 ° Random hair, eyes and clothes color
