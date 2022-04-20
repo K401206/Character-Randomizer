@@ -12,9 +12,12 @@ ColorShoes = color.random_color()
 class Humano(Entity):
     cabello = Entity(model = "cube", coillider = "mesh", color = color.random_color(), position = (0, 2, -0.1), scale = (1.1, random_generator.random(), 1.1))
     cabeza = Entity(model = "cube", collider = "mesh", position = (0, 1.6, -0.1), scale = (1, 1.2, 0.9))
-    ojo1 = Entity(model = "cube", color = ColorEyes, position = (0.3, 1.6, -0.5), scale = random_generator.random())
-    ojo2 = Entity(model = "cube", color = ColorEyes, position = (-0.3, 1.6, -0.5), scale = random_generator.random())
+    ojo1 = Entity(model = "cube", color = color.white, position = (0.3, 1.6, -0.5), scale = (0.3, random_generator.random(), 0.2))
+    pupila1 = Entity(model = "quad", position = (0.25,  1.62, -0.62), scale = 0.125)
+    ojo2 = Entity(model = "cube", color = color.white, position = (-0.3, 1.6, -0.5), scale = (0.3, random_generator.random(), 0.2))
+    pupila2 = Entity(model = "quad", color = ColorEyes, position = (-0.25,  1.62, -0.62), scale = 0.125)
     nariz = Entity(model = "cube", position = (0, 1.4, -0.6), scale = (0.2, 0.3, random_generator.random()))
+    boca = Entity(model = "quad", color = color.salmon, position = (0, 1.15, -0.56), scale = (0.3, 0.05))
     cuerpo = Entity(model = "cube", collider = "mesh", color = ColorShirt)
     hombro1 = Entity(model = "cube", collider = "mesh", color = ColorShirt, position = (0.9, 0.75, 0))
     hombro2 = Entity(model = "cube", collider = "mesh", color = ColorShirt, position = (-0.9, 0.75, 0))
@@ -42,9 +45,9 @@ def genes():
 
     if Heterocromia <= 0.1:
         for i in range(1):
-            Humano.ojo1.color = color.random_color()
+            Humano.pupila1.color = color.random_color()
     else:
-        Humano.ojo1.color = ColorEyes
+        Humano.pupila1.color = ColorEyes
 
     if Caucasico <= 0.7:
         Humano.cabeza.color = color.peach
@@ -64,17 +67,16 @@ def genes():
 def func():
     if Humano.cabello.scale_y <= 0.5:
         Humano.cabello.scale_y = 0.5
-
-    if Humano.ojo1.scale <= 0.5:
-        Humano.ojo1.scale = 0.2
+    if Humano.ojo1.scale_y <= 0.5:
+        Humano.ojo1.scale_y = 0.2
     else:
-        Humano.ojo1.scale = 0.225
+        Humano.ojo1.scale_y = 0.225
 
-    if Humano.ojo2.scale <= 0.5:
-        Humano.ojo2.scale = 0.2
+    if Humano.ojo2.scale_y <= 0.5:
+        Humano.ojo2.scale_y = 0.2
     else:
-        Humano.ojo2.scale = 0.225
-    
+        Humano.ojo2.scale_y = 0.225
+
     if Humano.nariz.scale.z >= 0.5:
         Humano.nariz.scale.z = 0.35
     elif Humano.nariz.scale.z <= 0.2:
@@ -85,7 +87,15 @@ def ropa():
     pantalon = random_generator.random()
     tenis = random_generator.random()
 
-    if sueter <= 0.5:
+    if sueter <= 0.3:
+        Humano.brazo1.color = ColorShirt
+        Humano.brazo1.scale = (0.6, 1.35, 0.6)
+        Humano.brazo2.color = ColorShirt
+        Humano.brazo2.scale = (0.6, 1.35, 0.6)
+        Humano.cuerpo.scale = (1.4, 2, 0.6)
+        Humano.hombro1.scale = 0.6
+        Humano.hombro2.scale = 0.6
+    elif sueter <= 0.6 and sueter > 0.3:
         Humano.brazo1.color = ColorShirt
         Humano.brazo1.scale = (0.5, 1.25, 0.5)
         Humano.brazo2.color = ColorShirt
