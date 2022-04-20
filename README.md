@@ -7,6 +7,13 @@ Was made in ursina engine using python3
 
 <p>Ursina Website:<a href="ursinaengine.org" target="_blank"> ursinaengine.org</a></p>
 
+<p><b>2.2.0 FEATURES</b>
+<br>
+° New eye style
+<br>
+° Mouth added
+</p>
+
 <p><b>2.1.0 FEATURES</b>
 <br>
 ° The clothes stick out
