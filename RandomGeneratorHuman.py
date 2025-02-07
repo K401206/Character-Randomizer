@@ -1,5 +1,7 @@
 # IMPORTS
 from ursina import *
+from ursina.prefabs.editor_camera import EditorCamera
+from ursina.shaders import lit_with_shadows_shader
 import random
 
 # VARIABLES
@@ -8,6 +10,13 @@ ColorEyes = color.random_color()
 ColorJeans = color.random_color()
 ColorShirt = color.random_color()
 ColorShoes = color.random_color()
+
+app = Ursina()
+
+editor_camera = EditorCamera(position=(-2, 1, 0))
+editor_camera.look_at(Vec3(3, -1, 2))
+light = PointLight(position=(2, 1, 0))
+Entity.default_shader = lit_with_shadows_shader
 
 class Humano(Entity):
     cabello = Entity(model = "cube", coillider = "mesh", color = color.random_color(), position = (0, 2, -0.1), scale = (1.1, random_generator.random(), 1.1))
@@ -133,3 +142,8 @@ def ropa():
 genes()
 ropa()
 func()
+
+sky = Sky(texture='sky_default')
+sky.shadow = False
+
+app.run()
